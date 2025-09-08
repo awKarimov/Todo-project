@@ -7,13 +7,11 @@ export let todos = localStorage.getItem("todos")
 todos = [
   {
     title: "Todo 1",
-    description: "qondaye",
+    description: "",
     id: "1",
     isCompleted: "false",
   },
 ];
-
-console.log(todos);
 
 export function changeTodos(value) {
   todos = value;

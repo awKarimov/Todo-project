@@ -21,13 +21,3 @@ export function deleteTodo(id) {
 }
 
 // Update Todo
-
-export function updateTodo(updatedTodo) {
-  const result = todos.map((todo) => {
-    if (todo.id === updatedTodo.id) {
-      return updatedTodo;
-    }
-    return todo;
-  });
-  changeTodos(result);
-}
