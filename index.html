@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo project</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body class="selection:bg-black selection:text-white">
+    <form>
+      <label>Write any text</label> <br />
+      <input id="inputText" type="text" required />
+      <button
+        id="addTodo"
+        type="button"
+        class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+        Add
+      </button>
+    </form>
+
+    <ul id="todosContainer"></ul>
+    <!-- TEMPLATE -->
+    <template id="cardTemplate"
+      ><li
+        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
+        <p class="font-normal text-gray-700 dark:text-gray-400"></p>
+        <button
+          type="button"
+          class="edit-btn text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+          Edit
+        </button>
+        <button
+          type="button"
+          class="delete-btn text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+          Delete
+        </button>
+      </li></template
+    >
+
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
