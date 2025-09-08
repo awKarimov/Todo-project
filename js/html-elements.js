@@ -1,7 +1,6 @@
 const elCardTemplate = document.getElementById("cardTemplate");
 const elTodosContainer = document.getElementById("todosContainer");
-const elInputText = document.getElementById("inputText");
+const elInputText = document.getElementById("title");
 const elAddTodo = document.getElementById("addTodo");
-const elEditBtn = document.getElementById("editButton");
 
-export { elCardTemplate, elTodosContainer, elInputText, elAddTodo, elEditBtn };
+export { elCardTemplate, elTodosContainer, elInputText, elAddTodo };

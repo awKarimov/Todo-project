@@ -10,6 +10,12 @@ export function getTodo(id) {
 
 // Create Todo
 
+export function addTodo(obj) {
+  todos.push(obj);
+
+  changeTodos(todos);
+}
+
 // Delete todo
 
 export function deleteTodo(id) {

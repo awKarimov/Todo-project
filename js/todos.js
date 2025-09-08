@@ -7,7 +7,7 @@ export let todos = localStorage.getItem("todos")
 todos = [
   {
     title: "Todo 1",
-    description: "",
+    description: "Todo comment",
     id: "1",
     isCompleted: "false",
   },
