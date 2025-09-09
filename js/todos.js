@@ -1,17 +1,6 @@
 import { uiChanger } from "./ui-changer.js";
 
-export let todos = localStorage.getItem("todos")
-  ? JSON.parse(localStorage.getItem("todos"))
-  : [];
-
-todos = [
-  {
-    title: "Todo 1",
-    description: "Todo comment",
-    id: "1",
-    isCompleted: "false",
-  },
-];
+export let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 export function changeTodos(value) {
   todos = value;

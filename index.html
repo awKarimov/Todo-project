@@ -6,30 +6,38 @@
     <title>Todo project</title>
     <link rel="stylesheet" href="./css/output.css" />
   </head>
-  <body class="selection:bg-black selection:text-white">
-    <div>
-      <label for="title" class="block mb-2 text-sm font-medium text-black-900"
-        >Write any text</label
-      >
-      <input
-        type="text"
-        id="title"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        placeholder="Write todo text"
-        required />
-    </div>
-    <button
-      id="addTodo"
-      type="button"
-      class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-      Add Todo
-    </button>
+  <body
+    class="selection:bg-black selection:text-white max-w-[1440px] bg-cover bg-[url(/img/todo.jpg)]">
+    <h1 class="font-bold text-6xl flex justify-center mb-3.5">TODO LIST</h1>
+    <form action="">
+      <div>
+        <label
+          for="title"
+          class="block mb-2 text-4xl font-medium text-black-900 flex justify-center"
+          >Write any text</label
+        >
+        <input
+          type="text"
+          id="title"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[550px] ml-[370px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Write todo text"
+          required />
+        <p id="checkText" class="text-red-600 ml-[370px]"></p>
+      </div>
 
-    <ul id="todosContainer"></ul>
+      <button
+        id="addTodo"
+        type="button"
+        class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-[370px] mt-3">
+        Add Todo
+      </button>
+    </form>
+
+    <ul id="todosContainer" class="ml-[370px]"></ul>
     <!-- TEMPLATE -->
     <template id="cardTemplate"
       ><li
-        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        class="block w-[420px] p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
         <h5
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
         <p class="font-normal text-gray-700 dark:text-gray-400"></p>

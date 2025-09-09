@@ -1,29 +1,54 @@
+import { elCheckText, elInputText, elAddTodo } from "./html-elements.js";
 import { changeTodos, todos } from "./todos.js";
 
-// Get todo
-export function getTodo(id) {
-  const result = todos.find((el) => {
-    return el.id === id;
-  });
-  return result;
-}
+let editingId = "";
 
-// Create Todo
+// Add Todo
 
 export function addTodo(obj) {
-  todos.push(obj);
+  if (obj.title.trim().length === 0) {
+    elCheckText.textContent = "Please write some text!";
+    setTimeout(() => {
+      elCheckText.textContent = "";
+    }, 2000);
+    return;
+  }
 
-  changeTodos(todos);
+  if (editingId !== "") {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === editingId ? { ...todo, title: obj.title } : todo
+    );
+    changeTodos(updatedTodos);
+    editingId = "";
+    elAddTodo.textContent = "Add";
+  } else {
+    todos.push(obj);
+    changeTodos(todos);
+  }
+
+  elInputText.value = "";
 }
 
-// Delete todo
+// Delete Todo
 
 export function deleteTodo(id) {
-  const result = todos.filter((el) => {
-    return el.id != id;
-  });
+  const filtered = todos.filter((todo) => todo.id !== id);
+  changeTodos(filtered);
 
-  changeTodos(result);
+  if (editingId === id) {
+    editingId = "";
+    elInputText.value = "";
+    elAddTodo.textContent = "Add";
+  }
 }
 
-// Update Todo
+// Edit Todo
+
+export function startEditTodo(id) {
+  const todo = todos.find((t) => t.id === id);
+  if (!todo) return;
+
+  editingId = id;
+  elInputText.value = todo.title;
+  elAddTodo.textContent = "Save";
+}
